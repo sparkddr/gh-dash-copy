@@ -31,7 +31,7 @@ const Navbar = () => {
   }
 
   return (
-    <header className="text-white p-4 bg-darkgrey z-30 relative ">
+    <header className="text-white p-4 bg-darkgrey z-30 h-[62px] relative ">
       <nav className="flex  items-center justify-between">
         <div
           onClick={() => {
@@ -57,14 +57,35 @@ const Navbar = () => {
               ></path>
             </svg>
           </a>
-          <form className="hidden md:block" action="" method="post">
+          <form
+            className="hidden md:block relative group focus:last:hidden "
+            action=""
+            method="post"
+          >
+            <label htmlFor="search"></label>
             <input
               type="text"
               name="search"
               id="search"
-              placeholder="Search GitHub"
-              className="bg-darkgrey w-60 focus:w-80 transition-all duration-300 placeholder-mediumGrey text-sm text-white placeholder:text-sm  focus:outline-none focus:ring-0 focus:border-borderGrey  focus:bg-slate-600 border-borderGrey h-7 rounded-md"
+              placeholder="Search or jump to..."
+              className="bg-darkgrey w-60 focus:w-[38vw] transition-all duration-300 placeholder-mediumGrey text-sm text-white placeholder:text-sm  focus:outline-none focus:ring-0 focus:border-borderGrey  focus:bg-white focus:text-darkgrey  border-borderGrey h-7 rounded-md"
+              autoComplete="off"
             />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="20"
+              aria-hidden="true"
+              className="absolute right-1 top-1 group-focus:hidden"
+            >
+              <path
+                fill="none"
+                stroke="#979A9C"
+                opacity=".4"
+                d="M3.5.5h12c1.7 0 3 1.3 3 3v13c0 1.7-1.3 3-3 3h-12c-1.7 0-3-1.3-3-3v-13c0-1.7 1.3-3 3-3z"
+              ></path>
+              <path fill="#979A9C" d="M11.8 6L8 15.1h-.9L10.8 6h1z"></path>
+            </svg>
           </form>
           <ul className=" hidden md:flex gap-4 text-sm font-bold">
             <li className="hover:text-mediumGrey">
@@ -147,14 +168,17 @@ const Navbar = () => {
               <img src={CaretDown} alt="caret" className="h-3" />
             </div>
             {isSummaryOpen && (
-              <div className="absolute w-max top-8 right-0 flex flex-col gap-2 bg-white text-darkgrey drop-shadow-lg rounded-lg border border-borderSummary z-20 ">
+              <div className=" text-sm absolute w-max top-8 right-0 flex flex-col gap-2 bg-white text-darkgrey drop-shadow-lg rounded-lg border border-borderSummary z-20 ">
                 <img
                   src={CaretDown}
                   alt="carte"
                   className="absolute h-6 -top-[15px] rotate-180 right-3"
                 />
-                <p className="border-t px-5 py-2 border-borderGrey">
-                  Sign in as <a href="https://github.com/sparkddr">sparkddr</a>
+                <p className="border-t px-5 py-2 border-borderGrey ">
+                  Sign in as{" "}
+                  <a href="https://github.com/sparkddr" className="font-bold">
+                    sparkddr
+                  </a>
                 </p>
                 <div className="text-sm px-4 w-full text-textGrey group ">
                   <button
@@ -239,7 +263,7 @@ const Navbar = () => {
               type="text"
               name="search"
               id="search"
-              placeholder="Search GitHub"
+              placeholder="Search or jump to..."
               className=" mt-4 bg-darkgrey w-full placeholder-mediumGrey text-sm text-white placeholder:text-sm  focus:outline-none focus:ring-0 focus:border-borderGrey  focus:bg-slate-600 border-borderGrey h-7 rounded-md"
             />
           </form>
@@ -457,7 +481,7 @@ const Navbar = () => {
                     </div>
                   </summary>
                   <ul
-                    className="bg-white border border-borderSummary rounded-lg w-52 text-xs max-h-48 overflow-scroll fixed translate-x-28 -translate-y-4  "
+                    className="bg-white border border-borderSummary rounded-lg w-52 text-xs max-h-48 overflow-scroll fixed translate-x-28 -translate-y-4 z-30  "
                     onClick={() => {
                       closeSummary();
                     }}

@@ -13,5 +13,10 @@ module.exports = {
       },
     },
   },
+  variants: {
+    extend: {
+      display: ["group-focus"],
+    },
+  },
   plugins: [require("@tailwindcss/line-clamp"), require("@tailwindcss/forms")],
 };

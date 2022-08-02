@@ -14,6 +14,7 @@ function Dashboard() {
   const [isFollowing, setIsFollowing] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMoreRepo, setIsMoreRepo] = useState(false);
+  const [isWelcomeOpen, setIsWelcomeOpen] = useState(true);
 
   return (
     <div className="relative max-h-screen">
@@ -66,7 +67,10 @@ function Dashboard() {
           <div className="flex justify-between items-center">
             <h2 className="font-semibold text-sm">Recent Repositories</h2>
             <div className="flex justify-end items-center">
-              <button className="flex gap-1 items-center text-white bg-[#2DA44E] px-4 border border-[rgba(27,31,36,0.15)] py-1 rounded-lg">
+              <a
+                href="https://github.com/new"
+                className="flex gap-1 items-center text-white bg-[#2DA44E] px-4 border border-[rgba(27,31,36,0.15)] py-1 rounded-lg"
+              >
                 <svg
                   aria-hidden="true"
                   height="16"
@@ -83,7 +87,7 @@ function Dashboard() {
                   ></path>
                 </svg>
                 New
-              </button>
+              </a>
             </div>
           </div>
           <div className="mt-2">
@@ -389,22 +393,31 @@ function Dashboard() {
             </div>
             {isFollowing ? (
               <div>
-                <div className="border border-borderSummary bg-white rounded-lg px-5 py-4 mt-2 drop-shadow-sm">
-                  <h3 className="font-semibold">Welcome to the news feed</h3>
-                  <p className="mt-3">
-                    We’re updating the cards and ranking all the time, so check
-                    back regularly. At first, you might need to follow some
-                    people or star some repositories to get started 🌱.
-                  </p>
-                  <button className="mt-3">
-                    <a
-                      href="https://github.com/orgs/github-community/discussions/categories/feed"
-                      className="text-blue-600 hover:underline"
-                    >
-                      Send feedback
-                    </a>
-                  </button>
-                </div>
+                {isWelcomeOpen && (
+                  <div className="border border-borderSummary bg-white rounded-lg px-5 py-4 mt-5 drop-shadow-sm relative">
+                    <XIcon
+                      className="absolute top-2 right-4 h-5 cursor-pointer"
+                      onClick={() => {
+                        setIsWelcomeOpen(false);
+                      }}
+                    />
+                    <h3 className="font-semibold">Welcome to the news feed</h3>
+                    <p className="mt-3">
+                      We’re updating the cards and ranking all the time, so
+                      check back regularly. At first, you might need to follow
+                      some people or star some repositories to get started 🌱.
+                    </p>
+                    <button className="mt-3">
+                      <a
+                        href="https://github.com/orgs/github-community/discussions/categories/feed"
+                        className="text-blue-600 hover:underline"
+                      >
+                        Send feedback
+                      </a>
+                    </button>
+                  </div>
+                )}
+
                 <div className="border border-borderSummary bg-white rounded-lg px-8 py-9 mt-6 text-center">
                   <h3 className="text-xl  font-bold">Explore GitHub</h3>
                   <p className="mt-2 text-textGrey">
