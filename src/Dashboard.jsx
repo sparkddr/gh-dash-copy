@@ -220,7 +220,7 @@ const Dashboard = () => {
                         }}
                       >
                         <div className="fixed inset-0 bg-black/30 z-10 lg:hidden "></div>
-                        <Dialog.Panel className="w-full lg:w-72 absolute top-20 px-6 z-30  lg:top-32 lg:right-64  ">
+                        <Dialog.Panel className="w-full lg:w-72 fixed lg:absolute top-20 px-6 z-30  lg:top-32 lg:right-64  ">
                           <div className="rounded-lg bg-white z-30 lg:border lg:border-borderSummary lg:drop-shadow-md">
                             <div className=" flex justify-between items-center px-6 lg:px-4 py-4 sm:py-2 sm:text-sm  border-b border-borderSummary">
                               <h3 className="font-semibold">
