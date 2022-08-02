@@ -31,8 +31,8 @@ const Navbar = () => {
   }
 
   return (
-    <header className="text-white p-4 bg-darkgrey z-30 h-[62px] relative ">
-      <nav className="flex  items-center justify-between">
+    <header className="text-white  bg-darkgrey z-30 relative ">
+      <nav className="flex p-4 items-center justify-between">
         <div
           onClick={() => {
             setIsMenuOpen(!isMenuOpen);
@@ -256,8 +256,9 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      {/* Menu Mobile */}
       {isMenuOpen && (
-        <div className="bg-darkgrey font-semibold md:hidden">
+        <div className="bg-darkgrey font-semibold md:hidden p-4">
           <form className=" md:hidden" action="" method="post">
             <input
               type="text"
@@ -271,31 +272,31 @@ const Navbar = () => {
             className="
         flex flex-col text-sm mt-4 "
           >
-            <li className="border-t py-2 border-borderGrey ">
+            <li className="border-t py-2 border-borderGrey hover:text-borderSummary">
               <a href="https://github.com/dashboard">Dashboard</a>
             </li>
-            <li className="border-t py-2 border-borderGrey ">
+            <li className="border-t py-2 border-borderGrey hover:text-borderSummary">
               <a href="https://github.com/pulls">Pull Requests</a>
             </li>
-            <li className="border-t py-2 border-borderGrey ">
+            <li className="border-t py-2 border-borderGrey hover:text-borderSummary">
               <a href="https://github.com/issues">Issues</a>
             </li>
-            <li className="border-t py-2 border-borderGrey ">
+            <li className="border-t py-2 border-borderGrey hover:text-borderSummary">
               <a href="https://github.com/marketplace">Marketplace</a>
             </li>
-            <li className="border-t py-2 border-borderGrey ">
+            <li className="border-t py-2 border-borderGrey hover:text-borderSummary">
               <a href="https://github.com/explore">Explore</a>
             </li>
-            <li className="border-t py-2 border-borderGrey ">
+            <li className="border-t py-2 border-borderGrey hover:text-borderSummary">
               <a href="https://github.com/codespaces">Codespaces</a>
             </li>
-            <li className="border-t py-2 border-borderGrey ">
+            <li className="border-t py-2 border-borderGrey hover:text-borderSummary">
               <a href="https://github.com/sponsors">Sponsors</a>
             </li>
-            <li className="border-t py-2 border-borderGrey ">
+            <li className="border-t py-2 border-borderGrey hover:text-borderSummary">
               <a href="https://github.com/settings/profile">Settings</a>
             </li>
-            <li className="border-t py-2 border-borderGrey ">
+            <li className="border-t py-2 border-borderGrey hover:text-borderSummary">
               <a
                 href="https://github.com/sparkddr"
                 className="flex gap-1 items-center "
@@ -308,7 +309,7 @@ const Navbar = () => {
                 sparkddr
               </a>
             </li>
-            <li className="border-t py-2 border-borderGrey ">
+            <li className="border-t py-2 border-borderGrey hover:text-borderSummary ">
               <button className="flex gap-1 items-center  ">
                 <LogoutIcon className="h-5" />
                 Sign Out
